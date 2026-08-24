@@ -15,6 +15,26 @@
                     "interactions": "",
                     "initialStateCheck": true,
                     "priority": 0
+                },
+                {
+                    "name": "Rotate",
+                    "type": "Value",
+                    "id": "eff140e5-c68c-4c5f-8278-c224e492d27c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
+                },
+                {
+                    "name": "ChangeColor",
+                    "type": "Button",
+                    "id": "1465ef74-312d-4682-81b6-26f2a8ea8db8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -72,6 +92,50 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "15d06310-80e3-4182-8ceb-a2f47fcd4210",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "f8a681da-4492-49a6-8298-e906b46c522f",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "83fc6408-6cf8-4bae-9534-e6901f735941",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e72ce85d-3d51-49d9-af19-ace23d9ec1b6",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeColor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -87,6 +151,26 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true,
+                    "priority": 0
+                },
+                {
+                    "name": "Rotate",
+                    "type": "Value",
+                    "id": "fb8d1320-77e9-4d93-ae90-5013f98634e0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
+                },
+                {
+                    "name": "ChangeColor",
+                    "type": "Button",
+                    "id": "a1bbfe65-3f92-4407-8861-8bca0f1b4498",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
                     "priority": 0
                 }
             ],
@@ -105,7 +189,7 @@
                 {
                     "name": "Up",
                     "id": "93b91922-7318-4f99-9fe3-8ef4375b7641",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/numpad8",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -116,7 +200,7 @@
                 {
                     "name": "Down",
                     "id": "e0e7c092-8c7d-4e2f-b51e-302189b1c1d8",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/numpad2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -127,7 +211,7 @@
                 {
                     "name": "Left",
                     "id": "6aa43c8b-32f9-4705-94a7-01744a4b4373",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/numpad4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -138,35 +222,17 @@
                 {
                     "name": "Right",
                     "id": "6c935523-724d-4446-bb07-a1de2299a551",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/numpad6",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "Rotation",
-            "id": "491e550d-c1d2-43c4-9e8a-cb782a92943e",
-            "actions": [
-                {
-                    "name": "Rotate",
-                    "type": "Value",
-                    "id": "378cc8bf-e43e-4ece-85e5-14e97b129655",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true,
-                    "priority": 0
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "1D Axis",
-                    "id": "5bdb7a70-407c-4608-90e6-6f00294f55a6",
+                    "id": "0036c5d0-9f66-43db-8dd0-9fea9ca7bf41",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -177,8 +243,8 @@
                 },
                 {
                     "name": "negative",
-                    "id": "a4e9b646-c076-4563-a596-dde4ed1bc660",
-                    "path": "<Keyboard>/q",
+                    "id": "02d76ebf-6f25-4b41-83d1-8f25f22c21af",
+                    "path": "<Keyboard>/numpad7",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -188,37 +254,19 @@
                 },
                 {
                     "name": "positive",
-                    "id": "72b25d80-2c15-4626-85a1-fc624ec06d89",
-                    "path": "<Keyboard>/e",
+                    "id": "15c84d1b-fbe3-4697-adde-74b1910c47a0",
+                    "path": "<Keyboard>/numpad9",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "Appearance",
-            "id": "c5f0c223-d714-4af2-8fd7-fcd1075c9978",
-            "actions": [
-                {
-                    "name": "ChangeColor",
-                    "type": "Button",
-                    "id": "3a7c47f5-a6f3-47d3-8f90-6eb657db2fc3",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false,
-                    "priority": 0
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "85e343ec-4bfd-4e2f-9cc9-6976b0ab7810",
-                    "path": "<Keyboard>/r",
+                    "id": "eb3833d1-d2c7-434b-97a1-1ef4c743526c",
+                    "path": "<Keyboard>/numpad5",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -7,8 +7,8 @@ namespace Game.Player
     {
         private enum Player
         {
-            PlayerOne, 
-            PlayerTwo
+            PlayerOne, //WASD 
+            PlayerTwo  //NUMPAD
         }
 
         [SerializeField] private Player _player;
@@ -17,39 +17,53 @@ namespace Game.Player
 
         private InputAction _moveAction;
         public Vector2 MovementDirection => _moveAction.ReadValue<Vector2>();
-        public bool ChangeColorReleased => _playerControls.Appearance.ChangeColor.WasReleasedThisFrame();
+
+        private InputAction _rotateAction;  //p1 = Q E   p2 = 7 9 (numpad) 
+        private InputAction _changeColorAction; //p1 = R   p2 = 5 (numpad)
+
+        public bool ChangeColorReleased => _changeColorAction.WasReleasedThisFrame();
 
         public bool RotationPressed(out float value)
         {
-            value = _playerControls.Rotation.Rotate.ReadValue<float>();
+            value = _rotateAction.ReadValue<float>();
 
-            return _playerControls.Rotation.Rotate.WasPressedThisFrame();
+            return _rotateAction.WasPressedThisFrame();
         }
 
         private void Awake()
         {
             _playerControls = new PlayerControls();
 
-            _moveAction = _player switch
+            switch(_player)
             {
-                Player.PlayerOne => _playerControls.PlayerOne.Move,
-                Player.PlayerTwo => _playerControls.PlayerTwo.Move,
-                _ => throw new System.ArgumentOutOfRangeException()
-            };
+                case Player.PlayerOne:
+                    _moveAction = _playerControls.PlayerOne.Move;
+                    _rotateAction = _playerControls.PlayerOne.Rotate;
+                    _changeColorAction = _playerControls.PlayerOne.ChangeColor;
+                    break;
+
+                case Player.PlayerTwo:
+                    _moveAction = _playerControls.PlayerTwo.Move;
+                    _rotateAction = _playerControls.PlayerTwo.Rotate;
+                    _changeColorAction = _playerControls.PlayerTwo.ChangeColor;
+                    break;
+
+            }                   
+            
         }       
 
         private void OnEnable()
         {
             _moveAction.Enable();
-            _playerControls.Rotation.Enable();
-            _playerControls.Appearance.Enable();
+            _rotateAction.Enable();
+            _changeColorAction.Enable();
         }
 
         private void OnDisable()
         {
             _moveAction.Disable();
-            _playerControls.Rotation.Disable();
-            _playerControls.Appearance.Disable();
+            _rotateAction.Disable();
+            _changeColorAction.Disable();
         }                      
     }
 }
