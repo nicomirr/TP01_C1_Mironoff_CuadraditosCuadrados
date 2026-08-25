@@ -34,21 +34,7 @@ namespace Game.Player
         {
             _playerControls = new PlayerControls();
 
-            switch(_player)
-            {
-                case Player.PlayerOne:
-                    _moveAction = _playerControls.PlayerOne.Move;
-                    _rotateAction = _playerControls.PlayerOne.Rotate;
-                    _changeColorAction = _playerControls.PlayerOne.ChangeColor;
-                    break;
-
-                case Player.PlayerTwo:
-                    _moveAction = _playerControls.PlayerTwo.Move;
-                    _rotateAction = _playerControls.PlayerTwo.Rotate;
-                    _changeColorAction = _playerControls.PlayerTwo.ChangeColor;
-                    break;
-
-            }                   
+            EnablePlayerInputs();     
             
         }       
 
@@ -64,7 +50,26 @@ namespace Game.Player
             _moveAction.Disable();
             _rotateAction.Disable();
             _changeColorAction.Disable();
-        }                      
+        }  
+        
+        private void EnablePlayerInputs()
+        {
+            switch (_player)
+            {
+                case Player.PlayerOne:
+                    _moveAction = _playerControls.PlayerOne.Move;
+                    _rotateAction = _playerControls.PlayerOne.Rotate;
+                    _changeColorAction = _playerControls.PlayerOne.ChangeColor;
+                    break;
+
+                case Player.PlayerTwo:
+                    _moveAction = _playerControls.PlayerTwo.Move;
+                    _rotateAction = _playerControls.PlayerTwo.Rotate;
+                    _changeColorAction = _playerControls.PlayerTwo.ChangeColor;
+                    break;
+
+            }
+        }
     }
 }
 
